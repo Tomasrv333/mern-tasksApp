@@ -1,27 +1,37 @@
-require('dotenv').config();
-const chalk = require('chalk');
-const bodyParser = require('body-parser');
-const express = require('express');
-const cors = require('cors');
+// Importing package's
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import 'dotenv/config';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+import allRoutes from './src/routes/index.js'
 
-const controllers = require('./src/controllers')
-
-const app = express();
+// Create express app & set a port
 const PORT = process.env.PORT || 8000;
+const app = express();
 
-app.use(bodyParser.json());
+// Middleware
 app.use(cors());
+app.use(morgan('tiny'));
+app.use(express.json());
+app.use(cookieParser());
 
-app.post('/tasks', controllers.tasks.createTask);
-app.get('/tasks', controllers.tasks.getTasks);
-app.get('/tasks/:id', controllers.tasks.getTask);
-app.patch('/tasks/:id', controllers.tasks.updateTask);
-app.delete('/tasks/:id', controllers.tasks.deleteTask);
+// Routes
+app.use('/api', allRoutes);
+
+// Mongo database connection
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.DB_CONNECTION_STRING);
+    console.log('Mongo connected');
+  } catch (err) {
+    console.log(err, 'no funciona');
+    process.exit(1);
+  }
+};
 
 app.listen(PORT, () => {
-    console.log(
-        `${chalk.green('✓')} ${chalk.blue(
-            `Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
-        )}`
-    )
-})
+  connectDB();
+  console.log(`Server is running at port ${PORT}`);
+});
