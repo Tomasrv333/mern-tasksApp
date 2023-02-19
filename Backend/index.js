@@ -25,7 +25,7 @@ app.use((err, req, res, next) => {
   const status = err.statusCode || 500;
   const message = err.message || 'Internal Server Error';
 
-  return res.staus(status).json({message, stack: err.stack});
+  return res.status(status).json({message, stack: err.stack});
 })
 
 // Mongo database connection
