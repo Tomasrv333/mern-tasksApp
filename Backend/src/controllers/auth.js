@@ -61,4 +61,17 @@ export const login = async (req, res, next) => {
 export const logout = (req, res) => {
     res.clearCookie('access_token');
     return res.status(200).json({message: 'Logout Succes'});
+};
+
+export const isLoggedIn = (req, res) => {
+    const token = req.cookies.access_token;
+    if(!token) {
+        return res.json(false)
+    }
+    return jwt.verify(token, process.env.JWT_SECRET, (err) => {
+        if(err) {
+            return res.json(false);
+        }
+        return res.json(true);
+    })
 }
