@@ -1,13 +1,9 @@
 import express from 'express';
+import { createTask, getAllTasks } from '../controllers/task.js';
 
 const router = express.Router();
 
-router.get('/hello', (req, res) => {
-    try {
-        res.json('hello world');
-    } catch(err) {
-        console.log(err)
-    }
-});
+router.post('/', createTask)
+router.get('/all', getAllTasks)
 
 export default router;
