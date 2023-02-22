@@ -1,7 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { Home, EditProfile, Auth } from './pages'
+import Home from './pages/Home.jsx';
+import EditProfile from './pages/EditProfile.jsx';
+import Auth from './pages/Auth.jsx';
 import PrivateRoutes from './components/PrivateRoutes'
 
 function App() {
