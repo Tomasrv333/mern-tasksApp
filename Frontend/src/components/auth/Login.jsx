@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import classes from '../../Scss/AuthForm.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
@@ -41,6 +42,7 @@ const Login = () => {
             </label>
             <button type='submit'>Login</button>
         </form>
+        <p className={classes.text}>Si aun no tienes cuenta <Link to='/auth/register' className={classes.text_link}>Registrate</Link> ahora.</p>
     </div>
   )
 }

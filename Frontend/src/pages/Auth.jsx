@@ -9,7 +9,6 @@ const Auth = () => {
     <Layout>
         <div className={classes.container}>
             <Login />
-            <Register />
         </div>
     </Layout>
   )
