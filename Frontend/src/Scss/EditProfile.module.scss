@@ -1,5 +1,12 @@
-.register,
-.login {
+.container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.editProfile {
 	width: fit-content;
 	height: fit-content;
 	display: flex;
@@ -17,9 +24,9 @@
 	font-size: 3rem;
 }
 
-.authForm {
-	margin-top: 1rem;
-	width: fit-content;
+.editForm {
+	margin-top: 2rem;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -45,8 +52,9 @@
 	}
 }
 
-.text_link {
-	color: lighten(#303030, 40);
-	text-decoration: underline;
-	cursor: pointer;
+.backBtn {
+	display: flex;
+	align-items: center;
+	color: #303030;
+	margin-bottom: 1rem;
 }

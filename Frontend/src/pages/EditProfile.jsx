@@ -1,8 +1,12 @@
 import React from 'react'
+import Layout from '../components/Layout'
+import EditProfileForm from '../components/profile/EditProfileForm'
 
 const EditProfile = () => {
   return (
-    <div>EditProfile</div>
+    <Layout>
+      <EditProfileForm />
+    </Layout>
   )
 }
 

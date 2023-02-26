@@ -18,3 +18,17 @@ body {
 a {
 	text-decoration: none;
 }
+
+p {
+	font-size: 12px;
+}
+
+input {
+	border: 1px solid lighten(#303030, 50);
+	border-radius: 0.6rem;
+	padding: 0.8rem;
+
+	&:focus {
+		outline: none;
+	}
+}

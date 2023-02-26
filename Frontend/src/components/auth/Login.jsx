@@ -34,15 +34,15 @@ const Login = () => {
         <form className={classes.authForm} onSubmit={login}>
             <label htmlFor='email'>
                 Email
-                <input type='email' name='email' placeholder='email' required />
+                <input type='email' name='email' placeholder='Email' required />
             </label>
             <label htmlFor='password'>
                 Password
-                <input type='password' name='password' placeholder='password' required />
+                <input type='password' name='password' placeholder='Password' required />
             </label>
             <button type='submit'>Login</button>
         </form>
-        <p className={classes.text}>Si aun no tienes una cuenta <Link to='/auth/register' className={classes.text_link}>Registrate</Link> ahora.</p>
+        <p className={classes.text}><Link to='/auth/register' className={classes.text_link}>Register</Link> for an account.</p>
     </div>
   )
 }

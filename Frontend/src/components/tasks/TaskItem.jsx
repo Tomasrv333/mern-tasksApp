@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import moment from 'moment';
 import { toast } from 'react-hot-toast';
 import classes from '../../Scss/TaskItem.module.scss'
 
 const TaskItem = ({task, deleteTask}) => {
-    const [isCompleted, setIsCompleted] = useState(task.isCompleted)
+    const [isCompleted, setIsCompleted] = useState(task.completed)
     const [isLoading, setIsLoading] = useState(false)
 
     const handleCheckboxClick = async () => {
@@ -31,6 +32,7 @@ const TaskItem = ({task, deleteTask}) => {
             <p>{task.title} </p>
         </td>
         <td className={classes.task_status}>{isCompleted ? 'Complete' : 'Incomplete'} </td>
+        <td className={classes.task_date}>{moment(task.createdAt).format('MMM Do yy')}</td>
         <td>
             <button className={classes.deleteBtn} type='button' onClick={() => deleteTask(task._id)}>Delete</button>
         </td>
