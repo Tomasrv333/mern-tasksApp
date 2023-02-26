@@ -1,0 +1,34 @@
+.container {
+	padding: 0 6rem;
+}
+
+.topBar {
+	margin: 2rem 0;
+
+	button {
+		background-color: #18bd18;
+	}
+}
+
+.addNew {
+	background-color: #303030;
+}
+
+.addNewForm {
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 2rem;
+
+	input {
+		border-radius: 0.3rem;
+		border: 1px solid #303030;
+		padding: 0.5rem;
+		color: #303030;
+		background-color: lighten(#303030, 70);
+	}
+}
+
+.taskList_table {
+	width: 100%;
+}

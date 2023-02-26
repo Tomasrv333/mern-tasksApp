@@ -41,7 +41,6 @@ const Navbar = () => {
         <div className={classes.userInfo}>
             <div>
                 <h1 className={classes.name}>{user.name}</h1>
-                <h1 className={classes.email}>{user.email}</h1>
                 <Link to='/edit-profile' className={classes.editBtn}>Edit</Link>
             </div>
         </div>
