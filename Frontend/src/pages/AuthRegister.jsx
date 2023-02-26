@@ -1,17 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Login from '../components/auth/Login'
-// import Register from '../components/auth/Register'
+import Register from '../components/auth/Register'
 import classes from '../Scss/Auth.module.scss'
 
-const Auth = () => {
+const AuthRegister = () => {
   return (
     <Layout>
         <div className={classes.container}>
-            <Login />
+            <Register />
         </div>
     </Layout>
   )
 }
 
-export default Auth
+export default AuthRegister

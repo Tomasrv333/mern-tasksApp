@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import classes from '../../Scss/AuthForm.module.scss'
 
 const Register = () => {
+    const navigate = useNavigate()
     const register = async (e) => {
         e.preventDefault()
         const user = {
@@ -14,9 +16,26 @@ const Register = () => {
         try{
             await axios.post('/api/auth/register', user);
             toast.success('Register Success')
+            loginAfterRegister(user)
         } catch(err) {
             console.log(err)
             toast.error('Register Failed')
+        }
+    }
+
+    const loginAfterRegister = async (user) => {
+        const email = user.email;
+        const password = user.password;
+    
+        try{
+            await axios.post('/api/auth/login', {
+                email,
+                password
+            });
+            navigate('/');
+        } catch(err) {
+            console.log(err)
+            toast.error('Login Failed')
         }
     }
 

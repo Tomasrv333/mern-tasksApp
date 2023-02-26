@@ -42,7 +42,7 @@ const Login = () => {
             </label>
             <button type='submit'>Login</button>
         </form>
-        <p className={classes.text}>Si aun no tienes cuenta <Link to='/auth/register' className={classes.text_link}>Registrate</Link> ahora.</p>
+        <p className={classes.text}>Si aun no tienes una cuenta <Link to='/auth/register' className={classes.text_link}>Registrate</Link> ahora.</p>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import EditProfile from './pages/EditProfile.jsx';
 import Auth from './pages/Auth.jsx';
 import PrivateRoutes from './components/PrivateRoutes'
+import AuthRegister from './pages/AuthRegister.jsx';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/edit-profile' element={<EditProfile />} />
             </Route>
-            <Route path='/login' element={<Auth />} />
+            <Route path='/auth' element={<Auth />} />
+            <Route path='/auth/register' element={<AuthRegister />} />
         </Routes>
     </>
   )
