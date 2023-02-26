@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Navbar from '../components/nav/Navbar';
-import TaskList from '../components/tasks/taskList';
+import TaskList from '../components/tasks/TaskList';
 
 function Home() {
   return (
