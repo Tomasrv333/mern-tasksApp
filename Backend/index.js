@@ -2,10 +2,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import 'dotenv/config';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import allRoutes from './src/routes/index.js'
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Create express app & set a port
 const PORT = process.env.PORT || 8000;
@@ -31,9 +32,11 @@ app.use((err, req, res, next) => {
 // Mongo database connection
 const connectDB = async () => {
   try {
+    mongoose.set('strictQuery', true);
     await mongoose.connect(process.env.DB_CONNECTION_STRING);
     console.log('Mongo connected');
   } catch (err) {
+    console.log(process.env.DB_CONNECTION_STRING)
     console.log(err, 'no funciona');
     process.exit(1);
   }

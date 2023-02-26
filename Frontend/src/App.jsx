@@ -14,7 +14,7 @@ function App() {
             position='top-right'
             toastOptions={{
                 style: {
-                    fontSize: '1.8rem'
+                    fontSize: '1.4rem'
                 }
             }}
         ></Toaster>

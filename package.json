@@ -1,0 +1,24 @@
+{
+	"name": "mern-tasksApp",
+	"version": "1.0.0",
+	"description": "Mern Task App",
+	"main": "index.js",
+	"scripts": {
+		"build": "cd Backend && npm install && cd ../Frontend && npm install && npm run build",
+		"start": "node Backend/index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Tomasrv333/mern-tasksApp.git"
+	},
+	"keywords": [
+		"Mern"
+	],
+	"author": "Tomas Rios Vargas",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Tomasrv333/nodejs-taskApp/issues"
+	},
+	"homepage": "https://github.com/Tomasrv333/nodejs-taskApp#readme"
+}
