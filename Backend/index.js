@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
 // Mongo database connection
 const connectDB = async () => {
   try {
-    mongoose.set('strictQuery', true);
+    mongoose.set('strictQuery', false);
     await mongoose.connect(process.env.DB_CONNECTION_STRING);
     console.log('Mongo connected');
   } catch (err) {
