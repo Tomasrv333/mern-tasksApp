@@ -1,0 +1,35 @@
+.task_item {
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+  background-color: #e3e3e3;
+}
+.task_item td {
+  width: 100%;
+  padding: 1rem;
+}
+.task_item .task_name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.task_item .task_name .checkbox {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.task_item .task_name .checkbox input {
+  width: 1.7rem;
+  height: 1.7rem;
+  cursor: pointer;
+}
+.task_item .task_name p {
+  width: 18rem;
+}
+.task_item .task_status {
+  width: 80%;
+}/*# sourceMappingURL=TaskItem.module.css.map */

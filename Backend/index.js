@@ -36,13 +36,15 @@ const connectDB = async () => {
     await mongoose.connect(process.env.DB_CONNECTION_STRING);
     console.log('Mongo connected');
   } catch (err) {
-    console.log(process.env.DB_CONNECTION_STRING)
     console.log(err, 'no funciona');
     process.exit(1);
   }
 };
 
 app.listen(PORT, () => {
-  connectDB();
-  console.log(`Server is running at port ${PORT}`);
+  if(connectDB()){
+    console.log(`Server is running at port ${PORT}`);
+  } else {
+    console.log('Something is wrong :(')
+  }
 });
