@@ -14,7 +14,7 @@ const Login = () => {
         const password = e.target.password.value;
     
         try{
-            await axios.post('/api/auth/login', {
+            await axios.post(`${URL}/api/auth/login`, {
                 email,
                 password,
             });

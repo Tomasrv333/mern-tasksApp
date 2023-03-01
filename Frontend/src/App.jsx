@@ -7,6 +7,8 @@ import Auth from './pages/Auth.jsx';
 import PrivateRoutes from './components/PrivateRoutes'
 import AuthRegister from './pages/AuthRegister.jsx';
 
+export const URL = process.env.REACT_APP_SERVER_URL;
+
 function App() {
   return (
     <>

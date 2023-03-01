@@ -36,7 +36,7 @@ const EditProfile = () => {
     e.preventDefault()
 
     try{
-      const res = await axios.put('/api/users/me', user)
+      const res = await axios.put(`${URL}/api/users/me`, user)
       toast.success('Profile updated')
       setUser(res.data)
     } catch(err) {
