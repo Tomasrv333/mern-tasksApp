@@ -23,7 +23,7 @@ const Navbar = () => {
 
     const handleLogout = async () => {
         try{
-            await axios.get(`${URL}/api/auth/logout`)
+            await axios.get('/api/auth/logout')
             setUser(null);
             toast.success('User Logged out')
             navigate('/auth')
