@@ -10,10 +10,14 @@ dotenv.config();
 
 // Create express app & set a port
 const PORT = process.env.PORT || 8000;
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [`https://127.0.0.1::${PORT}/`, "https://mern-task-app-backend-blhg.onrender.com"],
+  optionsSuccessStatus: 200
+}));
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
@@ -33,10 +37,11 @@ app.use((err, req, res, next) => {
 const connectDB = async () => {
   try {
     mongoose.set('strictQuery', true);
-    await mongoose.connect(process.env.DB_CONNECTION_STRING);
+    await mongoose.connect(DB_CONNECTION_STRING);
     console.log('Mongo connected');
   } catch (err) {
     console.log(err, 'Mongo connection failed');
+    console.log(DB_CONNECTION_STRING)
     process.exit(1);
   }
 };
