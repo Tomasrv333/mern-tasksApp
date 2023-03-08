@@ -15,8 +15,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [`https://127.0.0.1::${PORT}/`, "https://mern-task-app-backend-blhg.onrender.com"],
-  optionsSuccessStatus: 200
+  origin: [`http://localhost:5173`, "https://mern-task-app-backend-blhg.onrender.com"],
+  optionsSuccessStatus: 200,
+  credentials: true,
 }));
 app.use(morgan('tiny'));
 app.use(express.json());
